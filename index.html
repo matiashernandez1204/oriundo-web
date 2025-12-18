@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oriundo | Restaurante & Wine Bar</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #EFE9E2;
+      --primary: #2E2A26;
+      --accent: #6F7C5B;
+      --olive-dark: #5A6647;
+      --text: #2B2B2B;
+      --white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-top: 90px; /* Compensa header fijo */
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 18px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 90px;
+      background: rgba(239, 233, 226, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+    }
+
+    nav {
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .menu-links {
+      display: flex;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url('https://images.unsplash.com/photo-1528605248644-14dd04022da1') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 6rem 3rem 3rem;
+      color: var(--white);
+    }
+
+    .hero h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      border-radius: 40px;
+      background: var(--accent);
+      color: var(--white);
+      transition: 0.3s;
+    }
+
+    section {
+      padding: 6rem 3rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      margin-bottom: 3rem;
+      color: var(--accent);
+    }
+
+    /* MENU (NO TOCADO) */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .menu-item {
+      background: var(--white);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .menu-item-content {
+      padding: 2rem;
+    }
+
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      padding: 4rem 3rem;
+      text-align: center;
+    }
+
+    /* MOBILE MENU */
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu-links {
+        display: none;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100vw;
+        background: var(--bg);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      }
+
+      .menu-links.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>ORIUNDO</h1>
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <div class="menu-links" id="menu-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#menu">Menú</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://www.instagram.com/oriundo.uy/" target="_blank">Instagram</a>
+    </div>
+  </nav>
+</header>
+
+<!-- EL RESTO DE TU HTML QUEDA EXACTAMENTE IGUAL -->
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const links = document.getElementById('menu-links');
+
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
